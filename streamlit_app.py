@@ -40,18 +40,18 @@ def execute_bullet_summarizer(text_input, style_preset):
     
     if style_preset == "Short Viral Hook":
         formatted_summary = "### ⚡ Viral Hook Variations:\n\n"
-        if len(key_points) > 0:
-            formatted_summary += f"🔥 *Option 1: Did you know that {key_points[0].lower()}? Here is the truth...*\n\n"
+        formatted_summary += f"🔥 *Option 1: Did you know that {key_points[0]}? Here is the truth...*\n\n"
         if len(key_points) > 1:
-            formatted_summary += f"👀 *Option 2: Stop scrolling if you want to understand how {key_points[1].lower()}...*\n"
+            formatted_summary += f"👀 *Option 2: Stop scrolling if you want to understand how {key_points[1]}...*\n"
+        else:
+            formatted_summary += f"👀 *Option 2: Stop scrolling if you want to see the complete breakdown...*\n"
     elif style_preset == "Bullet Highlights":
         formatted_summary = "### ✨ Executive Key Highlights:\n\n"
         for idx, point in enumerate(key_points, 1):
             formatted_summary += f"*{idx}️⃣ {point}.*\n"
     else:  # LinkedIn/X Post
         formatted_summary = "### 📝 Ready-to-Post Social Script:\n\n"
-        if len(key_points) > 0:
-            formatted_summary += f"🧠 **The Core Breakdown:**\n\n{key_points[0]}.\n\n"
+        formatted_summary += f"🧠 **The Core Breakdown:**\n\n{key_points[0]}.\n\n"
         if len(key_points) > 1:
             formatted_summary += f"💡 **Why this matters:** {key_points[1]}.\n\n"
         formatted_summary += "👇 What are your thoughts on this? Let me know below! #Insight #Growth"
@@ -88,7 +88,7 @@ if st.button("⚡ Transform Content Instantly"):
             st.success("✨ Formatting Matrix Complete!")
             st.info(ai_output)
 
-# THE FINAL MONETIZED UPGRADE HUB (Linked directly to your live payment page)
+# THE FINAL MONETIZED UPGRADE HUB (Linked directly to your live profile link)
 st.markdown("---")
 st.markdown("""
 <div class="monetize-box">
