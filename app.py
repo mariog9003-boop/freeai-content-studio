@@ -5,7 +5,7 @@ st.set_page_config(
     page_icon="🚀", 
     layout="centered"
 )
-
+SECRET_SALT = "4928252a986d373e57a7cbb9403febc3c4d06d207708d6551111540a169712bdbc0c25f030cc58ba"
 # 🎨 PREMIUM CYBERPUNK DARK NEON INTERFACE DESIGN
 st.markdown("""<style>
     .main {background-color: #0d0e12;} 
