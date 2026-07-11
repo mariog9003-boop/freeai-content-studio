@@ -85,7 +85,7 @@ if st.button("⚡ Transform Content Instantly"):
             st.success("✨ Formatting Matrix Complete!")
             st.info(ai_output)
 
-# THE FINAL MONETIZED UPGRADE HUB (Pre-linked to your profile!)
+# THE FINAL MONETIZED UPGRADE HUB (Pre-linked to your personal channel link)
 st.markdown("---")
 st.markdown("""
 <div class="monetize-box">
