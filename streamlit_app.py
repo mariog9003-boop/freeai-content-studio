@@ -61,7 +61,6 @@ def execute_bullet_summarizer(text_input, style_preset):
 st.title("🚀 FreeAI Content Studio Pro")
 st.subheader("Transform boring text, blogs, or scripts into highly engaging social media formats instantly.")
 
-# ✨ EXTRA ATTRACTIVE PRESET HOOKS
 st.markdown("<p style='font-size: 14px; color: #718096; margin-bottom: 5px;'>⚡ 1-Click Transformation Style Preset:</p>", unsafe_allow_html=True)
 selected_preset = st.radio(
     label="Choose Output Style Preset",
@@ -72,12 +71,10 @@ selected_preset = st.radio(
 
 user_text = st.text_area("Paste your source text here:", height=220, placeholder="Enter text paragraphs, YouTube transcripts, or articles here...")
 
-# 📊 AUTOMATIC COUNT METRICS
 if user_text:
     words = len(user_text.split())
     chars = len(user_text)
     st.markdown(f"<span class='counter-badge'>📊 Words: <b>{words}</b></span> &nbsp; <span class='counter-badge'>🔤 Characters: <b>{chars}</b></span>", unsafe_allow_html=True)
-    st.markdown("<br>", unsafe_allow_html=True)
 
 if st.button("⚡ Transform Content Instantly"):
     if user_text.strip() == "":
@@ -88,7 +85,7 @@ if st.button("⚡ Transform Content Instantly"):
             st.success("✨ Formatting Matrix Complete!")
             st.info(ai_output)
 
-# THE FINAL MONETIZED UPGRADE HUB (Linked directly to your live profile link)
+# THE FINAL MONETIZED UPGRADE HUB (Pre-linked to your profile!)
 st.markdown("---")
 st.markdown("""
 <div class="monetize-box">
@@ -101,19 +98,5 @@ st.markdown("""
             💳 Secure Lifetime Access
         </button>
     </a>
-    <p style="color:#4a5568; font-size:11px; margin-top:12px;">🔒 Payments secured securely via standard bank level encryption protocols.</p>
-</div>
-""", unsafe_allow_html=True)
-
-# 🔒 GLOBAL USER DATA SECURITY & COMPLIANCE BOARD
-st.markdown("---")
-st.markdown("""
-<div style="background-color: #111318; padding: 15px; border-radius: 8px; border: 1px solid #2D3139;">
-    <p style="color: #7C8494; font-size: 11px; margin: 0; text-align: center;">
-        <b>🔒 Zero-Data Privacy Retention Guard:</b> FreeAI Studio processes all text content vectors entirely locally inside temporary operational memory streams. Your inputs, scripts, and drafts are never recorded, cached, or distributed to third-party networks.
-    </p>
-    <p style="color: #535B68; font-size: 10px; margin: 5px 0 0 0; text-align: center;">
-        © 2026 FreeAI Studio. All Rights Reserved. Protected by the standard MIT Licensing Framework.
-    </p>
 </div>
 """, unsafe_allow_html=True)
