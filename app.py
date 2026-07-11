@@ -93,7 +93,7 @@ st.markdown("""
     <h3 style="margin-top:12px; color:white; font-size:24px;">🚀 Unlock FreeAI Studio Premium</h3>
     <p style="color:#a0aec0; font-size:14px; max-width: 500px; margin: 0 auto 15px auto;">Tired of basic generation limits? Get lifetime unlimited high-speed access, long-form book processing, and unlock 15+ specialized creator styles.</p>
     <p style="font-size:20px; font-weight:bold; color:#34d399; margin-bottom:20px;">One-Time Payment • Lifetime Value</p>
-    <a href="https://buymeacoffee.com" target="_blank">
+<a href="https://www.buymeacoffee.com/hazelnut77" target="_blank">
         <button style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); color:white; border:none; padding:14px 40px; border-radius:10px; font-size:16px; font-weight:bold; cursor:pointer; width:100%; box-shadow: 0px 4px 15px rgba(99, 102, 241, 0.4);">
             💳 Secure Lifetime Access
         </button>
