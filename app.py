@@ -61,9 +61,8 @@ else:
 st.markdown("<br><p style='font-size: 14px; color: #45f3ff; font-weight: bold;'>⚡ Select Tactical Processing Preset Target:</p>", unsafe_allow_html=True)
 selected_preset = st.selectbox("Preset Style Selector", options=available_styles, label_visibility="collapsed")
 
-placeholder_msg = "Pro Tier Enabled..." if is_premium else "Free Tier Allocation: Paste source text up to 300 words..."
-max_chars = None if is_premium else 1500
-user_text = st.text_area("Source Vector Text Entry Box:", height=240, placeholder=placeholder_msg, max_chars=max_chars)
+placeholder_msg = "Pro Tier Enabled: Paste unlimited source scripts, structural link copy, podcast transcripts, or complete textbook chapters..." if is_premium else "Free Tier Allocation: Enter source text here. Upgrade below to unlock all 9+ multi-channel writing matrices..."
+user_text = st.text_area("Source Vector Text Entry Box:", height=240, placeholder=placeholder_msg)
 
 if user_text:
     st.markdown(f"<span class='counter-badge'>📊 Source Word Vector: <b>{len(user_text.split())}</b></span> &nbsp; <span class='counter-badge'>🔤 Character Array: <b>{len(user_text)}</b></span>", unsafe_allow_html=True)
@@ -73,8 +72,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 # 🧠 ENGINE GENERATION LOGIC
 def run_semantic_ai_engine(text_input, style_preset):
     sentences = [s.strip() for s in text_input.replace('\n', ' ').split('.') if len(s.strip()) > 5]
-    if len(sentences) == 0: 
-        return "⚠️ Please enter a longer paragraph."
+    if len(sentences) == 0: return "⚠️ Please enter a longer paragraph."
     
     # Complete document looping output builder layout
     output_str = "✨ **COMPLETE FULL TEXT TRANSFORMATION MATRIX**\n\n"
