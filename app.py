@@ -43,7 +43,7 @@ st.markdown("""<style>
     }
     div.stButton > button:first-child:hover {transform: translateY(-2px); box-shadow: 0px 8px 30px rgba(0, 242, 254, 0.7); color: #0b0c10;}
     
-    /* High-Tier Monetization Block */
+    /* High-Tier Monetization Box */
     .monetize-box {
         background: linear-gradient(145deg, #1f2833, #0b0c10); 
         padding: 40px; border-radius: 20px; border: 2px solid #00f2fe; 
@@ -81,7 +81,7 @@ st.markdown("<h1 style='color: white; font-size: 40px; font-weight: 800; margin-
 
 # Define Advanced Style Presets dynamically based on Premium Status
 if is_premium:
-    st.markdown("<h3><span style='color:#00f2fe;'>👑 Pro Workspace Workspace</span> Enabled • Unlimited Compute</h3>", unsafe_allow_html=True)
+    st.markdown("<h3><span style='color:#00f2fe;'>👑 Pro Workspace</span> Enabled • Unlimited Compute</h3>", unsafe_allow_html=True)
     available_styles = [
         "🔥 TikTok Viral Short-Form Script", "📸 Instagram Reel Hook Matrix", "🎥 YouTube Shorts Retention Layout",
         "💼 LinkedIn Thought Leader Post", "🧵 X (Twitter) Deep Value Thread", "📧 Premium Newsletter Issue Block",
@@ -122,42 +122,39 @@ if user_text:
 
 # 🧠 ROBUST INTERNAL PARSING ENGINE
 def run_semantic_ai_engine(text_input, style_preset):
-    # Cleans and segments source paragraphs logically by length and terminal endpoints
     sentences = [s.strip() for s in text_input.replace('\n', ' ').split('.') if len(s.strip()) > 10]
     
     if len(sentences) == 0:
         return "⚠️ Matrix Read Alert: The entry text is too brief to extract deep semantic properties. Paste a longer paragraph."
     
-    # Advanced Multi-Weight Selection Logic
     primary_topic = sentences[0]
     secondary_argument = sentences[1] if len(sentences) > 1 else primary_topic
     supporting_evidence = sentences[2] if len(sentences) > 2 else secondary_argument
     concluding_insight = sentences[-1] if len(sentences) > 3 else "The old frameworks are completely dead."
 
     # Parse and structure outputs based on strategic presets
-    if "TikTok" in style_preset or "IG" in style_preset or "Shorts" in style_preset:
-        return f"""🎬 **HIGH-RETENTION SHORT-FORM VIDEO SCRIPT**
-<span class='feature-tag'>AESTHETIC: FACELESS CYBERPUNK</span><br><br>
-🎥 **Visual Frame 1 (0-3s):** Fast flashing high-contrast text overlay on screen. Loop video of glowing mechanical structures.<br>
-🎙️ **Audio Hook:** "Stop wasting time trying to manually figure out how {primary_topic.lower()}! Here is the brutal truth the algorithms hide from you..."<br><br>
-🎥 **Visual Frame 2 (3-10s):** Zoom in tight on workspace results window panels.<br>
-🎙️ **Audio Body:** "Most content creators fail because they track basic parameters. The data matrices reveal that {secondary_argument.lower()}. Because when {supporting_evidence.lower()}, traditional workflows completely shatter."<br><br>
-🎥 **Visual Frame 3 (10-15s):** Smooth tracking pan shot pointing directly to profile link layout blocks.<br>
-🎙️ **Audio Outro:** "Drop an asset follow to secure your daily analytical advantage loop. Do not fall behind the speed curve. Click my bio tracking node right now." """
+    if "TikTok" in style_preset or "Shorts" in style_preset or "IG" in style_preset:
+        output_str = "🎬 **HIGH-RETENTION SHORT-FORM VIDEO SCRIPT**\n"
+        output_str += "<span class='feature-tag'>AESTHETIC: FACELESS CYBERPUNK</span><br><br>\n"
+        output_str += "🎥 **Visual Frame 1 (0-3s):** Fast flashing high-contrast text overlay on screen. Loop video of glowing mechanical structures.<br>\n"
+        output_str += f"🎙️ **Audio Hook:** \"Stop wasting time trying to manually figure out how {primary_topic.lower()}! Here is the brutal truth the algorithms hide from you...\"<br><br>\n"
+        output_str += "🎥 **Visual Frame 2 (3-10s):** Zoom in tight on workspace results window panels.<br>\n"
+        output_str += f"🎙️ **Audio Body:** \"Most content creators fail because they track basic parameters. The data matrices reveal that {secondary_argument.lower()}. Because when {supporting_evidence.lower()}, traditional workflows completely shatter.\"<br><br>\n"
+        output_str += "🎥 **Visual Frame 3 (10-15s):** Smooth tracking pan shot pointing directly to profile link layout blocks.<br>\n"
+        output_str += "🎙️ **Audio Outro:** \"Drop an asset follow to secure your daily daily analytical advantage loop. Do not fall behind the speed curve. Click my bio tracking node right now.\""
+        return output_str
 
     elif "LinkedIn" in style_preset or "Thread" in style_preset:
-        return f"""💼 **HIGH-AUTHORITY VALUE ARCHITECTURE**
-<span class='feature-tag'>PLATFORM: LINKEDIN / X PROFESSIONAL WRITING</span><br><br>
-I used to think standard organizational methods worked. I was entirely wrong.<br><br>
-Here is the real execution data behind how {primary_topic.lower()}:<br><br>
-• **1. The Core Catalyst Node:** {secondary_argument}.<br>
-• **2. The Underappreciated Shift:** When {supporting_evidence.lower()}, it creates an un-matched operational leverage layer for developers.<br><br>
-**The reality?** {concluding_insight}. Traditional operators will be completely out-paced by automation models before the end of this year.<br><br>
-What is your specific team roadmap to handle this shift? Let's discuss in the comment loop parameters below. 👇 #Growth #Innovation #Scale"""
+        output_str = "💼 **HIGH-AUTHORITY VALUE ARCHITECTURE**\n"
+        output_str += "<span class='feature-tag'>PLATFORM: LINKEDIN / X PROFESSIONAL WRITING</span><br><br>\n"
+        output_str += "I used to think standard organizational methods worked. I was entirely wrong.<br><br>\n"
+        output_str += f"Here is the real execution data behind how {primary_topic.lower()}:<br><br>\n"
+        output_str += f"• **1. The Core Catalyst Node:** {secondary_argument}.<br>\n"
+        output_str += f"• **2. The Underappreciated Shift:** When {supporting_evidence.lower()}, it creates an un-matched operational leverage layer for developers.<br><br>\n"
+        output_str += f"**The reality?** {concluding_insight}. Traditional operators will be completely out-paced by automation models before the end of this year.<br><br>\n"
+        output_str += "What is your specific team roadmap to handle this shift? Let's discuss in the comment loop parameters below. 👇 #Growth #Innovation #Scale"
+        return output_str
 
     elif "Sales" in style_preset:
-        return f"""💰 **PERSUASIVE CONVERSION MATRIX COPY**
-<span class='feature-tag'>INTENT: HIGH-TICKET ACQUISITION</span><br><br>
-Are you still leaving your target conversions completely up to chance using outdated communication frameworks?<br><br>
-It is leaking revenue every single hour your site stays live on the internet. <br><br>
-Here is your unfair competitive advantage: **{primary_topic}**.<br><br>
+        output_str = "💰 **PERSUASIVE CONVERSION MATRIX COPY**\n"
+        output_str += "<span class='feature-tag'>INTENT: HIGH-TICKET ACQUISITION</span><br><br>\n"
