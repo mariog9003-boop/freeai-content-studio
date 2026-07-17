@@ -32,8 +32,8 @@ st.sidebar.markdown("---")
 
 # Added Links (Using your GitHub handle 'mariog9003' as default)
 st.sidebar.markdown("#### 🛠️ Links & Support")
-st.sidebar.markdown("[🔑 Get a Premium Activation Key Here](https://buymeacoffee.com)")
-st.sidebar.markdown("[☕ Buy Me a Coffee / Support Page](https://buymeacoffee.com)")
+st.sidebar.markdown("[🔑 Get a Premium Activation Key Here](https://buymeacoffee.com/hazelnut77)")
+st.sidebar.markdown("[☕ Buy Me a Coffee / Support Page](https://buymeacoffee.com/hazelnut77)")
 
 
 # ----------------- MAIN PAGE CONTENT -----------------
