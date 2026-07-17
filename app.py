@@ -1,5 +1,6 @@
 import streamlit as st
 import hashlib
+import time
 
 st.set_page_config(
     page_title="FreeAI Content Studio Pro", 
@@ -27,38 +28,39 @@ def verify_license_key(hardware_id, inputted_key):
 # Fetch this visitor's un-shareable Device Fingerprint
 visitor_device_id = generate_hardware_id()
 
-# 🎨 PREMIUM CYBERPUNK DARK NEON STYLING
+# 🎨 ADVANCED CYBERPUNK DARK NEON INDUSTRIAL CSS DESIGN
 st.markdown("""<style>
     .main {background-color: #0b0c10;} 
-    /* Soft glowing input fields */
+    /* Deep workspace viewport panels */
     textarea {background-color: #1f2833 !important; color: #ffffff !important; border: 1px solid #45f3ff !important; border-radius: 12px !important; font-size: 15px !important;}
     
-    /* Hot Neon Action Button */
+    /* Glowing Neon Primary Execution Array */
     div.stButton > button:first-child {
         background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); 
-        color: #0b0c10; border: none; border-radius: 12px; width: 100%; height: 55px; 
-        font-weight: bold; font-size: 18px; box-shadow: 0px 4px 20px rgba(0, 242, 254, 0.4);
-        transition: all 0.3s ease; letter-spacing: 0.5px;
+        color: #0b0c10; border: none; border-radius: 12px; width: 100%; height: 56px; 
+        font-weight: 800; font-size: 18px; box-shadow: 0px 5px 25px rgba(0, 242, 254, 0.4);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); letter-spacing: 0.5px;
     }
-    div.stButton > button:first-child:hover {transform: translateY(-2px); box-shadow: 0px 6px 25px rgba(0, 242, 254, 0.7); color: #0b0c10;}
+    div.stButton > button:first-child:hover {transform: translateY(-2px); box-shadow: 0px 8px 30px rgba(0, 242, 254, 0.7); color: #0b0c10;}
     
-    /* High-Tier Monetization Box */
+    /* High-Tier Monetization Block */
     .monetize-box {
         background: linear-gradient(145deg, #1f2833, #0b0c10); 
-        padding: 35px; border-radius: 20px; border: 2px solid #00f2fe; 
-        text-align: center; margin-top: 40px; box-shadow: 0px 10px 35px rgba(0, 242, 254, 0.15);
+        padding: 40px; border-radius: 20px; border: 2px solid #00f2fe; 
+        text-align: center; margin-top: 45px; box-shadow: 0px 12px 40px rgba(0, 242, 254, 0.2);
     }
-    .premium-badge {background-color: #00f2fe; color: #0b0c10; padding: 6px 16px; border-radius: 20px; font-size: 11px; font-weight: bold; letter-spacing: 1px;}
+    .premium-badge {background-color: #00f2fe; color: #0b0c10; padding: 6px 18px; border-radius: 20px; font-size: 11px; font-weight: bold; letter-spacing: 1px;}
     .counter-badge {background-color: #1f2833; padding: 6px 14px; border-radius: 8px; border: 1px solid #45f3ff; font-size: 13px; color: #c5c6c7;}
     .license-banner {background-color: #1f2833; padding: 15px; border-radius: 10px; border: 1px dashed #00f2fe; margin-bottom: 20px;}
     
-    /* Output Showcase Styling */
-    .output-box {background-color: #1f2833; border-left: 5px solid #00f2fe; padding: 20px; border-radius: 8px; color: white;}
+    /* Premium Semantic Content Box */
+    .output-box {background-color: #11161d; border-left: 5px solid #00f2fe; padding: 25px; border-radius: 12px; color: #f1f1f1; font-size: 15.5px; line-height: 1.6;}
+    .feature-tag {background-color: #1f2833; color: #00f2fe; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid rgba(0,242,254,0.3);}
 </style>""", unsafe_allow_html=True)
 
 # 🔑 SIDEBAR ACTIVATION PANEL
 with st.sidebar:
-    st.markdown("### 🔑 System Licensing")
+    st.markdown("### 🔑 System Licensing Control")
     st.markdown(f"""
     <div class='license-banner'>
         <span style='color: #c5c6c7; font-size: 11px;'>YOUR DEVICE ID:</span><br>
@@ -70,87 +72,92 @@ with st.sidebar:
     is_premium = verify_license_key(visitor_device_id, user_license)
     
     if is_premium:
-        st.success("👑 Pro Unlocked: Full Engine Active!")
+        st.success("👑 Pro Unlocked: Enterprise Engine Active!")
     elif user_license:
         st.error("🔴 Verification Failure: Token Mismatch.")
 
 # 🚀 MAIN APPLICATION LAYOUT
-st.markdown("<h1 style='color: white; font-size: 38px;'>🚀 FreeAI Content Studio Pro</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='color: white; font-size: 40px; font-weight: 800; margin-bottom: 0px;'>🚀 FreeAI Content Studio Pro</h1>", unsafe_allow_html=True)
 
 # Define Advanced Style Presets dynamically based on Premium Status
 if is_premium:
-    st.markdown("<h3><span style='color:#00f2fe;'>👑 Pro Workspace</span> Enabled: 9 Core Architectures Available</h3>", unsafe_allow_html=True)
+    st.markdown("<h3><span style='color:#00f2fe;'>👑 Pro Workspace Workspace</span> Enabled • Unlimited Compute</h3>", unsafe_allow_html=True)
     available_styles = [
-        "🔥 TikTok Viral Reel", "📸 IG Reel Hook Matrix", "🎥 YouTube Short Retainer",
-        "💼 LinkedIn Thought Leader", "🧵 X (Twitter) Deep Thread", "📧 Premium Newsletter Block",
-        "✨ Core Bullet Highlights", "🧠 Hook Variation Engine", "💰 High-Converting Sales Copy"
+        "🔥 TikTok Viral Short-Form Script", "📸 Instagram Reel Hook Matrix", "🎥 YouTube Shorts Retention Layout",
+        "💼 LinkedIn Thought Leader Post", "🧵 X (Twitter) Deep Value Thread", "📧 Premium Newsletter Issue Block",
+        "✨ Core Executive Bullet Highlights", "🧠 Advanced Hook Variation Engine", "💰 High-Converting Copywriting Framework"
     ]
 else:
-    st.markdown("<h3 style='color: #c5c6c7; font-size: 18px;'>Transform dry text, scripts, or links into high-retention formats instantly.</h3>", unsafe_allow_html=True)
-    available_styles = ["✨ Core Bullet Highlights", "🧠 Hook Variation Engine", "💼 LinkedIn Thought Leader"]
+    st.markdown("<h3 style='color: #c5c6c7; font-size: 17px; font-weight: 400; margin-top: 5px;'>Advanced semantic intelligence arrays converting source documents into high-retention social assets.</h3>", unsafe_allow_html=True)
+    available_styles = [
+        "✨ Core Executive Bullet Highlights", 
+        "🧠 Advanced Hook Variation Engine", 
+        "💼 LinkedIn Thought Leader Post",
+        "🔒 🔥 TikTok Viral Short-Form Script (Pro)", 
+        "🔒 📸 Instagram Reel Hook Matrix (Pro)",
+        "🔒 🎥 YouTube Shorts Retention Layout (Pro)",
+        "🔒 🧵 X (Twitter) Deep Value Thread (Pro)",
+        "🔒 📧 Premium Newsletter Issue Block (Pro)",
+        "🔒 💰 High-Converting Copywriting Framework (Pro)"
+    ]
 
-st.markdown("<br><p style='font-size: 14px; color: #66fcf1; font-weight: bold;'>⚡ 1-Click Transformation Engine Preset:</p>", unsafe_allow_html=True)
+st.markdown("<br><p style='font-size: 14px; color: #45f3ff; font-weight: bold; margin-bottom: 5px;'>⚡ Select Tactical Processing Preset Target:</p>", unsafe_allow_html=True)
 selected_preset = st.selectbox("Preset Style Selector", options=available_styles, label_visibility="collapsed")
 
 # Enforce word limits on free tier
 if is_premium:
-    placeholder_msg = "Pro Tier Unrestricted: Paste massive script files, complete podcast transcripts, or full ebook chapters..."
+    placeholder_msg = "Pro Tier Enabled: Paste unlimited source scripts, structural link copy, podcast transcripts, or complete textbook chapters..."
     max_chars = None
 else:
-    placeholder_msg = "Free Tier Restrained: Paste text up to 300 words. Upgrade to Pro below to process unlimited characters and long-form files..."
+    placeholder_msg = "Free Tier Allocation: Paste source text up to 300 words. Upgrade below to clear limits and unlock all 9+ multi-channel writing matrices..."
     max_chars = 1500
 
-user_text = st.text_area("Paste your source text here:", height=240, placeholder=placeholder_msg, max_chars=max_chars)
+user_text = st.text_area("Source Vector Text Entry Box:", height=240, placeholder=placeholder_msg, max_chars=max_chars)
 
 if user_text:
     words = len(user_text.split())
     chars = len(user_text)
-    st.markdown(f"<span class='counter-badge'>📊 Word Vector: <b>{words}</b></span> &nbsp; <span class='counter-badge'>🔤 Character Vector: <b>{chars}</b></span>", unsafe_allow_html=True)
+    st.markdown(f"<span class='counter-badge'>📊 Source Word Vector: <b>{words}</b></span> &nbsp; <span class='counter-badge'>🔤 Character Array: <b>{chars}</b></span>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
 
-# 🧠 INTERACTIVE GENERATION REFACTOR ENGINE
-def execute_bullet_summarizer(text_input, style_preset):
-    sentences = [s.strip() for s in text_input.replace('\n', ' ').split('.') if len(s.strip()) > 8]
+# 🧠 ROBUST INTERNAL PARSING ENGINE
+def run_semantic_ai_engine(text_input, style_preset):
+    # Cleans and segments source paragraphs logically by length and terminal endpoints
+    sentences = [s.strip() for s in text_input.replace('\n', ' ').split('.') if len(s.strip()) > 10]
+    
     if len(sentences) == 0:
-        return "⚡ System Notice: Please enter a longer source text vector to process semantic insights."
+        return "⚠️ Matrix Read Alert: The entry text is too brief to extract deep semantic properties. Paste a longer paragraph."
     
-    lead_point = sentences[0] if len(sentences) > 0 else "your content"
-    sub_point = sentences[1] if len(sentences) > 1 else lead_point
-    
-    if "TikTok" in style_preset or "Short" in style_preset or "IG" in style_preset:
-        return f"🎬 **FACELESS SHORT-FORM VIDEO SCRIPT**\n\n**Visual:** [Fast panning screen cut showing high-contrast neon text]\n\n**Hook (First 2 Seconds):** \"Stop scrolling if you want to understand how {lead_point.lower()}! Here is the brutal truth standard workflows hide from you...\"\n\n**Body Frame:** \"Most people fail because they ignore this. The matrix reveals that {sub_point.lower()}. This single shift changes everything.\"\n\n**Call to Action:** \"Drop a follow to lock in your daily data leverage loop. Don't fall behind.\""
+    # Advanced Multi-Weight Selection Logic
+    primary_topic = sentences[0]
+    secondary_argument = sentences[1] if len(sentences) > 1 else primary_topic
+    supporting_evidence = sentences[2] if len(sentences) > 2 else secondary_argument
+    concluding_insight = sentences[-1] if len(sentences) > 3 else "The old frameworks are completely dead."
+
+    # Parse and structure outputs based on strategic presets
+    if "TikTok" in style_preset or "IG" in style_preset or "Shorts" in style_preset:
+        return f"""🎬 **HIGH-RETENTION SHORT-FORM VIDEO SCRIPT**
+<span class='feature-tag'>AESTHETIC: FACELESS CYBERPUNK</span><br><br>
+🎥 **Visual Frame 1 (0-3s):** Fast flashing high-contrast text overlay on screen. Loop video of glowing mechanical structures.<br>
+🎙️ **Audio Hook:** "Stop wasting time trying to manually figure out how {primary_topic.lower()}! Here is the brutal truth the algorithms hide from you..."<br><br>
+🎥 **Visual Frame 2 (3-10s):** Zoom in tight on workspace results window panels.<br>
+🎙️ **Audio Body:** "Most content creators fail because they track basic parameters. The data matrices reveal that {secondary_argument.lower()}. Because when {supporting_evidence.lower()}, traditional workflows completely shatter."<br><br>
+🎥 **Visual Frame 3 (10-15s):** Smooth tracking pan shot pointing directly to profile link layout blocks.<br>
+🎙️ **Audio Outro:** "Drop an asset follow to secure your daily analytical advantage loop. Do not fall behind the speed curve. Click my bio tracking node right now." """
+
     elif "LinkedIn" in style_preset or "Thread" in style_preset:
-        return f"💼 **HIGH-RETENTION PROFESSIONAL WRITING**\n\nI used to think traditional processes worked. I was entirely wrong.\n\nHere is the real breakdown behind how {lead_point.lower()}:\n\n• **The Structural Catalyst:** {sub_point}.\n• **Why This Matters:** It creates an immediate processing advantage for creators.\n\nTraditional operators will fall behind in 2026. The future belongs entirely to automated iteration.\n\nAgree? Let me know your thoughts in the comment loop matrix below. #Growth #Scale"
+        return f"""💼 **HIGH-AUTHORITY VALUE ARCHITECTURE**
+<span class='feature-tag'>PLATFORM: LINKEDIN / X PROFESSIONAL WRITING</span><br><br>
+I used to think standard organizational methods worked. I was entirely wrong.<br><br>
+Here is the real execution data behind how {primary_topic.lower()}:<br><br>
+• **1. The Core Catalyst Node:** {secondary_argument}.<br>
+• **2. The Underappreciated Shift:** When {supporting_evidence.lower()}, it creates an un-matched operational leverage layer for developers.<br><br>
+**The reality?** {concluding_insight}. Traditional operators will be completely out-paced by automation models before the end of this year.<br><br>
+What is your specific team roadmap to handle this shift? Let's discuss in the comment loop parameters below. 👇 #Growth #Innovation #Scale"""
+
     elif "Sales" in style_preset:
-        return f"💰 **HIGH-CONVERTING PERSUASIVE SALES COPY**\n\nAre you still losing attention because of outdated presentation frameworks?\n\nIt is costing you money every single hour. Here is your unfair competitive advantage: **{lead_point}**.\n\nThis isn't an iterative choice—it is a mandatory survival tool. Because our system tracks that {sub_point.lower()}.\n\n👇 Click the secure checkout gateway link right now to bypass the free limits forever."
-    else:
-        return f"✨ **EXECUTIVE CORE INSIGHT MATRICES**\n\n• 🧬 **Primary Data Hook Vector:** {lead_point}.\n• ⚡ **Secondary Dynamic Operational Node:** {sub_point}."
-
-if st.button("⚡ TRANSFORM CONTENT INSTANTLY"):
-    if user_text.strip() == "":
-        st.warning("Please enter your text first!")
-    else:
-        with st.spinner("Compiling tactical semantic data matrices..."):
-            ai_output = execute_bullet_summarizer(user_text, selected_preset)
-            st.success("✨ Optimization Complete!")
-            
-            # Displays output inside a gorgeously styled box
-            st.markdown(f"<div class='output-box'>{ai_output.replace('\n', '<br>')}</div>", unsafe_allow_html=True)
-            st.markdown("<br>", unsafe_allow_html=True)
-
-# 💳 HIGH-TIER MONETIZATION INTERFACE (Only visible if they haven't upgraded yet)
-if not is_premium:
-    st.markdown("---")
-    st.markdown("""
-    <div class="monetize-box">
-        <span class="premium-badge">PRO MEMBERSHIP ACCESS</span>
-        <h3 style="margin-top:14px; color:white; font-size:26px;">🚀 Scale Up to FreeAI Studio Premium</h3>
-        <p style="color:#c5c6c7; font-size:14.5px; max-width: 520px; margin: 0 auto 15px auto;">Stop hitting basic processing limits. Secure lifetime unlimited character clearance, long-form transcript scraping, and unlock 9+ high-retention creator writing presets instantly.</p>
-        <p style="font-size:22px; font-weight:bold; color:#00f2fe; margin-bottom:22px;">One-Time Payment • Lifetime Value</p>
-        <a href="https://buymeacoffee.com" target="_blank">
-            <button style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); color:#0b0c10; border:none; padding:15px 45px; border-radius:12px; font-size:16.5px; font-weight:bold; cursor:pointer; width:100%; box-shadow: 0px 4px 18px rgba(0, 242, 254, 0.4);">
-                💳 Secure Lifetime Access Upgrade
-            </button>
-        </a>
-    </div>
-    """, unsafe_allow_html=True)
+        return f"""💰 **PERSUASIVE CONVERSION MATRIX COPY**
+<span class='feature-tag'>INTENT: HIGH-TICKET ACQUISITION</span><br><br>
+Are you still leaving your target conversions completely up to chance using outdated communication frameworks?<br><br>
+It is leaking revenue every single hour your site stays live on the internet. <br><br>
+Here is your unfair competitive advantage: **{primary_topic}**.<br><br>
