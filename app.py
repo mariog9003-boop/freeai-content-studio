@@ -27,7 +27,7 @@ def verify_license_key(hardware_id, inputted_key):
 # Fetch this visitor's un-shareable Device Fingerprint
 visitor_device_id = generate_hardware_id()
 
-# 🎨 UPGRADED PREMIUM CYBERPUNK DARK NEON STYLING
+# 🎨 PREMIUM CYBERPUNK DARK NEON STYLING
 st.markdown("""<style>
     .main {background-color: #0b0c10;} 
     /* Soft glowing input fields */
@@ -114,8 +114,8 @@ def execute_bullet_summarizer(text_input, style_preset):
     if len(sentences) == 0:
         return "⚡ System Notice: Please enter a longer source text vector to process semantic insights."
     
-    lead_point = sentences[0]
-    sub_point = sentences[1] if len(sentences) > 1 else sentences[0]
+    lead_point = sentences[0] if len(sentences) > 0 else "your content"
+    sub_point = sentences[1] if len(sentences) > 1 else lead_point
     
     if "TikTok" in style_preset or "Short" in style_preset or "IG" in style_preset:
         return f"🎬 **FACELESS SHORT-FORM VIDEO SCRIPT**\n\n**Visual:** [Fast panning screen cut showing high-contrast neon text]\n\n**Hook (First 2 Seconds):** \"Stop scrolling if you want to understand how {lead_point.lower()}! Here is the brutal truth standard workflows hide from you...\"\n\n**Body Frame:** \"Most people fail because they ignore this. The matrix reveals that {sub_point.lower()}. This single shift changes everything.\"\n\n**Call to Action:** \"Drop a follow to lock in your daily data leverage loop. Don't fall behind.\""
@@ -137,9 +137,6 @@ if st.button("⚡ TRANSFORM CONTENT INSTANTLY"):
             # Displays output inside a gorgeously styled box
             st.markdown(f"<div class='output-box'>{ai_output.replace('\n', '<br>')}</div>", unsafe_allow_html=True)
             st.markdown("<br>", unsafe_allow_html=True)
-            
-            # 📋 INSTANT COPY TO CLIPBOARD SHORTCUT WIDGET
-            st.text_copy_button("📋 Copy Optimized Output to Clipboard", value=ai_output)
 
 # 💳 HIGH-TIER MONETIZATION INTERFACE (Only visible if they haven't upgraded yet)
 if not is_premium:
@@ -149,10 +146,11 @@ if not is_premium:
         <span class="premium-badge">PRO MEMBERSHIP ACCESS</span>
         <h3 style="margin-top:14px; color:white; font-size:26px;">🚀 Scale Up to FreeAI Studio Premium</h3>
         <p style="color:#c5c6c7; font-size:14.5px; max-width: 520px; margin: 0 auto 15px auto;">Stop hitting basic processing limits. Secure lifetime unlimited character clearance, long-form transcript scraping, and unlock 9+ high-retention creator writing presets instantly.</p>
-        <p style="font-size:22px; font-weight:bold; color:#00f2fe; margin-bottom:22px;">One-Time Payment • \$19 Lifetime Value</p>
+        <p style="font-size:22px; font-weight:bold; color:#00f2fe; margin-bottom:22px;">One-Time Payment • Lifetime Value</p>
         <a href="https://buymeacoffee.com" target="_blank">
             <button style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); color:#0b0c10; border:none; padding:15px 45px; border-radius:12px; font-size:16.5px; font-weight:bold; cursor:pointer; width:100%; box-shadow: 0px 4px 18px rgba(0, 242, 254, 0.4);">
                 💳 Secure Lifetime Access Upgrade
             </button>
         </a>
     </div>
+    """, unsafe_allow_html=True)
